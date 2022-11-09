@@ -1,0 +1,45 @@
+{% macro render_list(list) %}
+    {% set n = len(list) %}
+    {% for i in range(n) %}
+        {% if i == n - 1 %}
+            {{ list[i] }}.
+        {% else %}
+            {{ list[i] }},
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример JINJA2</title>
+</head>
+<body>
+<p>Привет,
+    {% if user[3] == "ж" %}
+        студентка
+    {% else %}
+        студент
+    {% endif %}
+    <span style="color: green; font-weight: bold">{{ add_spaces(user[0]) }}!</span>!</p>
+<p>
+    Ваша образовательная программа
+    <b>
+        {% if user[1] == "Экономика" %}
+            38.03.01
+        {% elif user[1] == "Бизнес-информатика" %}
+            38.03.05
+        {% endif %}
+        {{ add_spaces(user[1]) }}.
+    </b>
+</p>
+<p>
+    {% set n = len(user[2]) %}
+    Вы изучаете {{ n }} {{ discipline(n) }}:
+</p>
+<p>
+    {{ render_list(user[2]) }}
+</p>
+</body>
+</html>

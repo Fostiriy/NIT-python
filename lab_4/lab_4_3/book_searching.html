@@ -1,0 +1,1323 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск книг</title>
+    <link rel="stylesheet" href="book_searching.css">
+</head>
+<body>
+<aside class="search_bar">
+    
+        
+    <details class="selection_section" open>
+        <summary class="selection_section__header">Жанр</summary>
+        <fieldset class="selection_section__body">
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Жанр"
+                            
+                            
+                           checked
+                            >
+                    Детектив (8)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Жанр"
+                            
+                            >
+                    Лирика (6)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Жанр"
+                            
+                            
+                           checked
+                            >
+                    Приключения (3)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Жанр"
+                            
+                            
+                           checked
+                            >
+                    Роман (9)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Жанр"
+                            
+                            >
+                    Фантастика (3)
+                </label>
+            
+        </fieldset>
+    </details>
+
+    
+        
+    <details class="selection_section" open>
+        <summary class="selection_section__header">Автор</summary>
+        <fieldset class="selection_section__body">
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            
+                           checked
+                            >
+                    Агата Кристи (5)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Булгаков М.А. (2)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Дойл Артур Конан (4)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            
+                           checked
+                            >
+                    Жюль Верн (2)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            
+                           checked
+                            >
+                    Ильф И.А. (3)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Лермонтов М.Ю. (5)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            
+                           checked
+                            >
+                    Петров Е.П. (3)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Пушкин А.С. (5)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Стругацкий А.Н. (3)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Автор"
+                            
+                            >
+                    Стругацкий Б.Н. (3)
+                </label>
+            
+        </fieldset>
+    </details>
+
+    
+        
+    <details class="selection_section" open>
+        <summary class="selection_section__header">Издательство</summary>
+        <fieldset class="selection_section__body">
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    АЛЬФА-КНИГА (6)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    АСТ (3)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    ДРОФА (9)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    ПИТЕР (2)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    РОСМЭН (6)
+                </label>
+            
+                <label class="option_label">
+                    <input type="checkbox" name="Издательство"
+                            
+                            >
+                    ЭКСМО (3)
+                </label>
+            
+        </fieldset>
+    </details>
+
+    
+    <button class="selection_section__button button">Найти</button>
+    <button class="selection_section__button button">Очистить</button>
+</aside>
+<main class="main">
+    <p class="search_choices">
+        
+            
+    
+        <span class="section_name">Жанр: </span>
+        
+            
+            
+                <span class="section_choice">Детектив<span class="gap">, </span></span>
+            
+        
+            
+            
+        
+            
+            
+                <span class="section_choice">Приключения<span class="gap">, </span></span>
+            
+        
+            
+            
+                <span class="section_choice">Роман<span class="gap">, </span></span>
+            
+        
+            
+            
+        
+    
+
+        
+            
+    
+        <span class="section_name">Автор: </span>
+        
+            
+            
+                <span class="section_choice">Агата Кристи<span class="gap">, </span></span>
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+                <span class="section_choice">Жюль Верн<span class="gap">, </span></span>
+            
+        
+            
+            
+                <span class="section_choice">Ильф И.А.<span class="gap">, </span></span>
+            
+        
+            
+            
+        
+            
+            
+                <span class="section_choice">Петров Е.П.<span class="gap">, </span></span>
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+    
+
+        
+            
+    
+
+        
+    </p>
+    <div class="book_cards_wrapper">
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Вокруг света за 80 дней
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Жюль Верн
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Приключения
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2019
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        5
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Герой нашего времени
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Лермонтов М.Ю.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АСТ
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2017
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        1
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Двенадцать стульев
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Ильф И.А.,Петров Е.П.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        РОСМЭН
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2018
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        0
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Дубровский
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Пушкин А.С.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2020
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        7
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Евгений Онегин
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Пушкин А.С.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АЛЬФА-КНИГА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2011
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        8
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Загадочное происшествие
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Агата Кристи
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2018
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        5
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Записки о Шерлоке Холмсе
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Дойл Артур Конан
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2015
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        1
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Затерянный мир
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Дойл Артур Конан
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Приключения
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ПИТЕР
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2020
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        0
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Золотой теленок
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Ильф И.А.,Петров Е.П.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ЭКСМО
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2014
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        3
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Капитанская дочка
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Пушкин А.С.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АЛЬФА-КНИГА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2016
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        5
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Мастер и Маргарита
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Булгаков М.А.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2014
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        4
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Одноэтажная Америка
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Ильф И.А.,Петров Е.П.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ПИТЕР
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2015
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        3
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Приключения Шерлока Холмса
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Дойл Артур Конан
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        РОСМЭН
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2013
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        1
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Пуаро ведет следствие
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Агата Кристи
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2008
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        1
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Скрюченный домишко
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Агата Кристи
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2018
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        2
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Смерть на Ниле
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Агата Кристи
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ЭКСМО
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2017
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        6
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Собачье сердце
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Булгаков М.А.
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Роман
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        ДРОФА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2015
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        6
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Таинственный остров
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Жюль Верн
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Приключения
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АЛЬФА-КНИГА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2015
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        0
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Убийства по алфавиту
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Агата Кристи
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АЛЬФА-КНИГА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2017
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        9
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+            
+            
+            
+            
+                
+    <div class="book_card">
+        
+        
+            <p class="book_info">Название:
+                <span class="book_info__value">
+                        Этюд в багровых тонах
+                </span>
+            </p>
+        
+            <p class="book_info">Авторы:
+                <span class="book_info__value">
+                        Дойл Артур Конан
+                </span>
+            </p>
+        
+            <p class="book_info">Жанр:
+                <span class="book_info__value">
+                        Детектив
+                </span>
+            </p>
+        
+            <p class="book_info">Издательство:
+                <span class="book_info__value">
+                        АЛЬФА-КНИГА
+                </span>
+            </p>
+        
+            <p class="book_info">Год_издания:
+                <span class="book_info__value">
+                        2020
+                </span>
+            </p>
+        
+            <p class="book_info">Количество:
+                <span class="book_info__value">
+                        0
+                </span>
+            </p>
+        
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+
+            
+        
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Построение графика функции</title>
+    <link rel="stylesheet" href="main.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+</head>
+<body>
+<main class="main">
+    <form class="function_form">
+        <p>Функция:
+            <!-- список для выбора: функция 1, функция 2, функция 3 -->
+            <select name=func>
+                
+                    <!-- если номер варианта совпадает со значением i, устанавливаем атрибут selected -->
+                    <!-- атрибут value для каждой строки будет совпадать с i -->
+                    
+                        <option value=0> f(x) </option>
+                    
+                
+                    <!-- если номер варианта совпадает со значением i, устанавливаем атрибут selected -->
+                    <!-- атрибут value для каждой строки будет совпадать с i -->
+                    
+                        <option selected value=1> y(x) </option>
+                    
+                
+                    <!-- если номер варианта совпадает со значением i, устанавливаем атрибут selected -->
+                    <!-- атрибут value для каждой строки будет совпадать с i -->
+                    
+                        <option value=2> z(x) </option>
+                    
+                
+            </select>
+        </p>
+        <p>Начало интервала:
+            <input type=text name=beg_i value=-2 size=1>
+        </p>
+        <p>Конец интервала:
+            <input type=text name=end_i value=6 size=1>
+        </p>
+        <p>Количество значений:
+            <input type=text name=count_p value=30 size=1>
+        </p>
+        <p>
+            <input type=submit value="Построить">
+        </p>
+    </form>
+    <p class="function__formula">
+        <!-- в зависимости от номера вариант вывести функцию -->
+        
+    
+        𝑦(𝑥) = 𝑥² − 5𝑥 + 1
+    
+
+    </p>
+    <div class="function_block">
+    <div class="function_wrapper">
+        <table class="function__table">
+            <thead>
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td>-2.0</td>
+                    <td>15.0</td>
+                </tr>
+            
+                <tr>
+                    <td>-1.724</td>
+                    <td>12.5933</td>
+                </tr>
+            
+                <tr>
+                    <td>-1.448</td>
+                    <td>10.3389</td>
+                </tr>
+            
+                <tr>
+                    <td>-1.172</td>
+                    <td>8.2366</td>
+                </tr>
+            
+                <tr>
+                    <td>-0.897</td>
+                    <td>6.2866</td>
+                </tr>
+            
+                <tr>
+                    <td>-0.621</td>
+                    <td>4.4887</td>
+                </tr>
+            
+                <tr>
+                    <td>-0.345</td>
+                    <td>2.843</td>
+                </tr>
+            
+                <tr>
+                    <td>-0.069</td>
+                    <td>1.3496</td>
+                </tr>
+            
+                <tr>
+                    <td>0.207</td>
+                    <td>0.0083</td>
+                </tr>
+            
+                <tr>
+                    <td>0.483</td>
+                    <td>-1.1807</td>
+                </tr>
+            
+            <tr>
+                <td colspan="2" style="text-align: center">...</td>
+            </tr>
+            
+                <tr>
+                    <td>3.517</td>
+                    <td>-4.2152</td>
+                </tr>
+            
+                <tr>
+                    <td>3.793</td>
+                    <td>-3.5779</td>
+                </tr>
+            
+                <tr>
+                    <td>4.069</td>
+                    <td>-2.7883</td>
+                </tr>
+            
+                <tr>
+                    <td>4.345</td>
+                    <td>-1.8466</td>
+                </tr>
+            
+                <tr>
+                    <td>4.621</td>
+                    <td>-0.7527</td>
+                </tr>
+            
+                <tr>
+                    <td>4.897</td>
+                    <td>0.4935</td>
+                </tr>
+            
+                <tr>
+                    <td>5.172</td>
+                    <td>1.8918</td>
+                </tr>
+            
+                <tr>
+                    <td>5.448</td>
+                    <td>3.4423</td>
+                </tr>
+            
+                <tr>
+                    <td>5.724</td>
+                    <td>5.1451</td>
+                </tr>
+            
+                <tr>
+                    <td>6.0</td>
+                    <td>7.0</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+    <img src="pict_func.jpg" alt="График функции" class="function__graph" \>
+</div>
+</main>
+</body>
+</html>

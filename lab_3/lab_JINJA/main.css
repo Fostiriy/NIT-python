@@ -1,0 +1,47 @@
+.function_form {
+    min-width: fit-content;
+    width: 15vw;
+    margin: 0 auto;
+}
+
+.function_form p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.function_block {
+    display: flex;
+    justify-content: center;
+}
+
+.function_wrapper {
+    min-width: 150px;
+}
+
+.function__formula {
+    font-weight: bold;
+    text-align: center;
+}
+
+.function__table {
+    background: #e8e8e8;
+}
+
+.function__table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.function__table thead tr,
+.function__table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.function__table th,
+.function__table td {
+    padding: 5px 10px;
+}
+
+.function__graph {
+    height: 100%;
+}
+

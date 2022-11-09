@@ -1,0 +1,10 @@
+{% macro render_list(list) %}
+    {% set n = len(list) %}
+    {% for i in range(n) %}
+        {% if i == n - 1 %}
+            {{ list[i] }}.
+        {% else %}
+            {{ list[i] }},
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

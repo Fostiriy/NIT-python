@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+{% macro render_selection_section(section_name, data, choices) %}
+    <details class="selection_section" open>
+        <summary class="selection_section__header">{{ section_name }}</summary>
+        <fieldset class="selection_section__body">
+            {% for i in range(len(data)) %}
+                <label class="option_label">
+                    <input type="checkbox" name="{{ section_name }}"
+                            {% set value = data.iloc[i, 0] %}
+                            {% if value in choices %}
+                           checked
+                            {% endif %}>
+                    {{ value }} ({{ data.iloc[i, 1] }})
+                </label>
+            {% endfor %}
+        </fieldset>
+    </details>
+{% endmacro %}
+
+{% macro render_selection_tags(section_name, data, choices) %}
+    {% if choices != [] %}
+        <span class="section_name">{{ section_name }}: </span>
+        {% for i in range(len(data)) %}
+            {% set value = data.iloc[i, 0] %}
+            {% if value in choices %}
+                <span class="section_choice">{{ value }}<span class="gap">, </span></span>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro render_selection_tags(section_name, data, choices) %}
+    {% if choices != () %}
+        <span class="section_name">{{ section_name }}: </span>
+        {% for i in range(len(data)) %}
+            {% set value = data.iloc[i, 0] %}
+            {% if value in choices %}
+                <span class="section_choice">{{ value }}<span class="gap">, </span></span>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro render_book_card(book) %}
+    <div class="book_card">
+        {% set attributes = ['Название', 'Авторы', 'Жанр', 'Издательство', 'Год_издания', 'Количество'] %}
+        {% for attribute in attributes %}
+            <p class="book_info">{{ attribute }}:
+                <span class="book_info__value">
+                        {{ book[attribute] }}
+                </span>
+            </p>
+        {% endfor %}
+        <button class="book_card__button button">Выбрать</button>
+    </div>
+{% endmacro %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск книг</title>
+    <link rel="stylesheet" href="book_searching.css">
+</head>
+<body>
+<aside class="search_bar">
+    {% for section_name, data, choices in zip(section_names, all_data, all_choices) %}
+        {{ render_selection_section(section_name, data, choices) }}
+    {% endfor %}
+    <button class="selection_section__button button">Найти</button>
+    <button class="selection_section__button button">Очистить</button>
+</aside>
+<main class="main">
+    <p class="search_choices">
+        {% for section_name, data, choices in zip(section_names, all_data, all_choices) %}
+            {{ render_selection_tags(section_name, data, choices) }}
+        {% endfor %}
+    </p>
+    <div class="book_cards_wrapper">
+        {% for i in range(len(books)) %}
+            {% set book = books.loc[i] %}
+            {% set book_authors = set(book['Авторы'].split(',')) %}
+            {% set authors_intersection = list(set.intersection(book_authors, set(authors))) %}
+            {% if authors_intersection != [] or book['Жанр'] in genre_list or book['Издательство'] in publishers %}
+                {{ render_book_card(book) }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</main>
+</body>
+</html>

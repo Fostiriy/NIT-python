@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица и график функции</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<main class="function_block main">
+    <div class="function_wrapper">
+        <p class="function__formula">𝑓(𝑥) = 𝑥³ − 6𝑥² + 𝑥 + 5</p>
+        <table class="function__table">
+            <thead>
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range(len(x)) %}
+                <tr>
+                    <td>{{ round(x[i], 3) }}</td>
+                    <td>{{ round(y[i], 4) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <img src="{{ pict }}" alt="График функции" class="function__graph" \>
+</main>
+</body>
+</html>

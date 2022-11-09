@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+{% macro render_table(table_name, relation) %}
+    <div class="table__wrapper">
+        <p class="table__name">{{ table_name }}</p>
+        <table class="table">
+            <!-- количество строк в таблице -->
+            {% set n = len(relation) %}
+            <!-- формируем заголовок таблицы (имена столбцов) -->
+            <thead>
+            <tr>
+                {% for name in relation.dtypes.index %}
+                    <th>{{ name }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            <!-- для всех строк таблицы -->
+            {% for i in range(n) %}
+                <tr>
+                    <!-- выводим значение каждого столбца -->
+                    {% for name in relation.dtypes.index %}
+                        <td> {{ relation.loc[i, name] }} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endmacro %}
+
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title> Дамп базы данных </title>
+    <link rel="stylesheet" href="../library.css">
+</head>
+<body>
+<main class="main">
+    {% for name, table in zip(table_names, relations) %}
+        {{ render_table(name, table) }}
+    {% endfor %}
+</main>
+</body>
+</html>

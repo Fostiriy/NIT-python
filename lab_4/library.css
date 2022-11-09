@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.table__name {
+    font-weight: bold;
+}
+
+.table {
+    background: #e8e8e8;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.table thead tr,
+.table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table th,
+.table td {
+    padding: 5px 10px;
+}
+
