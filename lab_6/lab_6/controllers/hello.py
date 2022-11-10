@@ -23,7 +23,7 @@ def hello():
     event_id = request.values.getlist('event[]')
     # формируем список из выбранных пользователем дисциплин
     subjects_select = [constants.subjects[int(i)] for i in subject_id]
-    events_select = [constants.subjects[int(i)] for i in event_id]
+    events_select = [constants.events[int(i)] for i in event_id]
     html = render_template(
         'hello.html',
         name=name,
