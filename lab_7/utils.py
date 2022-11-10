@@ -1,5 +1,5 @@
 import sqlite3
 
 
-def get_db_connection():
+def get_db_connection() -> object:
     return sqlite3.connect('library.sqlite')

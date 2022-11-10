@@ -1,4 +1,4 @@
-import constants as constants
+import constants
 from app import app
 from flask import render_template, request
 

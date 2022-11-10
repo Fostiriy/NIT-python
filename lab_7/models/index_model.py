@@ -3,9 +3,8 @@ import pandas
 
 def get_reader(conn):
     return pandas.read_sql(
-        '''
-        SELECT * FROM reader
-        ''', conn)
+        '''SELECT * FROM reader
+''', conn)
 
 
 def get_book_reader(conn, reader_id):
