@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приветствие</title>
+</head>
+<body>
+{% if name == "" %}
+    <p>Введите имя, пожалуйста!</p>
+{% else %}
+    <p>
+        Привет,
+        {% if gender == "m" %}
+            студент
+        {% elif gender == "w" %}
+            студентка
+        {% endif %}
+        {{ name }}!
+    </p>
+    <p>
+        Ваша образовательная программа: {{ program }}.
+    </p>
+    <p>
+        {% if subjects_select == [] %}
+            Вы не изучаете никакие дисциплины
+        {% else %}
+            Вы изучаете дисциплины:
+            {% for i in range(len(subjects_select)) %}
+                {% if i != len(subjects_select) - 1 %}
+                    {{ subjects_select[i] }},
+                {% else %}
+                    {{ subjects_select[i] }}.
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </p>
+    <p>
+        {% if events_select == [] %}
+            Вы ещё не участвовали в мероприятиях.
+        {% else %}
+            Вы изучаете дисциплины:
+            {% for i in range(len(events_select)) %}
+                {% if i != len(events_select) - 1 %}
+                    {{ events_select[i] }},
+                {% else %}
+                    {{ events_select[i] }}.
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приветствие</title>
+</head>
+<body>
+<form action="{{ url_for('hello') }}" method="get">
+    <p>Имя: <input type=text name=username></p>
+    <p>Пол:<br>
+        <input type=radio name=gender value=w> Ж <br>
+        <input type=radio name=gender value=m> M
+    </p>
+    </p>
+    Образовательная программа:
+    <select name=program>
+        {% for i in range(len(program_list)) %}
+            <option value={{ i }}>{{ program_list[i] }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p>
+        Выберите дисциплины, которые Вы изучаете:<br>
+        {% for i in range(len(subject_list)) %}
+            <input type=checkbox name=subject[] value={{ i }}>
+            {{ subject_list[i] }}<br>
+        {% endfor %}
+    </p>
+    <p>
+        Отметьте олимпиады и конкурсы, в которых Вы участвовали:<br>
+        {% for i in range(len(event_list)) %}
+            <input type=checkbox name=event[] value={{ i }}>
+            {{ event_list[i] }}<br>
+        {% endfor %}
+    </p>
+    <p><input type=submit value=Отправить></p>
+</form>
+</body>
+</html>
