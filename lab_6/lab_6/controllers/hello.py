@@ -1,5 +1,5 @@
-import lab_6.lab_6.constants as constants
-from lab_6.lab_6.app import app
+import constants
+from app import app
 from flask import render_template, request
 
 
