@@ -22,14 +22,14 @@
     </p>
     <p>
         {% if subjects_select == [] %}
-            Вы не изучаете никакие дисциплины
+            Вы не изучаете никакие дисциплины.
         {% else %}
             Вы изучаете дисциплины:
             {% for i in range(len(subjects_select)) %}
                 {% if i != len(subjects_select) - 1 %}
-                    {{ subjects_select[i] }},
+                    <a href={{ url_for('subject', sub=subjects_select[i]) }}> {{ subjects_select[i] }}</a>,
                 {% else %}
-                    {{ subjects_select[i] }}.
+                    <a href={{ url_for('subject', sub=subjects_select[i]) }}> {{ subjects_select[i] }}</a>.
                 {% endif %}
             {% endfor %}
         {% endif %}
@@ -38,12 +38,12 @@
         {% if events_select == [] %}
             Вы ещё не участвовали в мероприятиях.
         {% else %}
-            Вы изучаете дисциплины:
+            Вы участвовали в мероприятиях:
             {% for i in range(len(events_select)) %}
                 {% if i != len(events_select) - 1 %}
-                    {{ events_select[i] }},
+                    <a href={{ url_for('event', event_name=events_select[i]) }}> {{ events_select[i] }}</a>,
                 {% else %}
-                    {{ events_select[i] }}.
+                    <a href={{ url_for('event', event_name=events_select[i]) }}> {{ events_select[i] }}</a>.
                 {% endif %}
             {% endfor %}
         {% endif %}
