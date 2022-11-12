@@ -2,10 +2,10 @@ from app import app
 from flask import render_template
 
 
-@app.route('/book', methods=['get'])
-def book():
+@app.route('/statistics', methods=['get'])
+def statistics():
     # выводим форму
     html = render_template(
-        'book.html',
+        'statistics.html',
     )
     return html

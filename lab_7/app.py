@@ -11,4 +11,6 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 # закомментировать еще не реализованные
 import controllers.index
 import controllers.new_reader
+import controllers.book
 import controllers.search
+import controllers.statistics

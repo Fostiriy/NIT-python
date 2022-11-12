@@ -42,3 +42,24 @@ def borrow_book(conn, book_id, reader_id):
     # указать текущую дату как дату выдачи книги
     # уменьшить количество экземпляров взятой книги
     return True
+
+
+# Увеличить количество экземпляров книг в таблице book и указать текущую дату как дату сдачи книги в таблице book_reader
+def return_book(conn, book_reader_id):
+    cur = conn.cursor()
+
+    book_id = pandas.read_sql(f'''
+SELECT book_id FROM book_reader WHERE book_reader_id = {book_reader_id}
+    ''', conn).values[0][0]
+
+    cur.executescript(f'''
+UPDATE book
+SET available_numbers = available_numbers + 1
+WHERE book_id = {book_id};
+
+UPDATE book_reader
+SET return_date = date('now')
+WHERE book_reader_id = {book_reader_id}
+    ''')
+
+    return conn.commit()
