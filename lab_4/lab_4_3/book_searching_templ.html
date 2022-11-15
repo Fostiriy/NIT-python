@@ -19,18 +19,6 @@
 {% endmacro %}
 
 {% macro render_selection_tags(section_name, data, choices) %}
-    {% if choices != [] %}
-        <span class="section_name">{{ section_name }}: </span>
-        {% for i in range(len(data)) %}
-            {% set value = data.iloc[i, 0] %}
-            {% if value in choices %}
-                <span class="section_choice">{{ value }}<span class="gap">, </span></span>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-{% endmacro %}
-
-{% macro render_selection_tags(section_name, data, choices) %}
     {% if choices != () %}
         <span class="section_name">{{ section_name }}: </span>
         {% for i in range(len(data)) %}

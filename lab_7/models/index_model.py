@@ -31,7 +31,11 @@ ORDER BY 3
 # для обработки данных о новом читателе
 def get_new_reader(conn, new_reader):
     cur = conn.cursor()
-    # добавить нового читателя в базу
+
+    cur.execute('''
+INSERT INTO reader(reader_name) VALUES (:new_reader)
+    ''', {"new_reader": new_reader})
+
     return cur.lastrowid
 
 
