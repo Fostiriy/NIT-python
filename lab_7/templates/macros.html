@@ -7,39 +7,45 @@
         <b>{{ table_name }}</b>
     </p>
     {% set n = len(relation) %}
-    <table>
-        <tr>
-            {% for name in relation.dtypes.index %}
-                {% if name != id %}
-                    <th>{{ name }}</th>
-                {% endif %}
-            {% endfor %}
-        </tr>
-        <tbody>
-
-        {% for i in range(n) %}
+    {% if n == 0 %}
+        <p>У вас нет книг на руках.</p>
+    {% else %}
+        <table class="table">
+            <thead>
             <tr>
                 {% for name in relation.dtypes.index %}
                     {% if name != id %}
-                        <td>
-                            {% if relation.loc[i, name] == None %}
-                                <form action='' method="get">
-                                    <input type="hidden" name=return_book_reader_id
-                                           value={{ relation.loc[i, "book_reader_id"] }}>
-                                    <form action="" method="post">
-                                        <input type="submit" value="Сдать">
-                                    </form>
-                                </form>
-                            {% else %}
-                                {{ relation.loc[i, name] }}
-                            {% endif %}
-                        </td>
+                        <th>{{ name }}</th>
                     {% endif %}
                 {% endfor %}
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+
+            {% for i in range(n) %}
+                <tr>
+                    {% for name in relation.dtypes.index %}
+                        {% if name != id %}
+                            <td>
+                                {% if relation.loc[i, name] == None %}
+                                    <form action='' method="get">
+                                        <input type="hidden" name=return_book_reader_id
+                                               value={{ relation.loc[i, "book_reader_id"] }}>
+                                        <form action="" method="post">
+                                            <input type="submit" value="Сдать">
+                                        </form>
+                                    </form>
+                                {% else %}
+                                    {{ relation.loc[i, name] }}
+                                {% endif %}
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 {% endmacro %}
 
 <! — Формирование поля со списком -->
@@ -131,6 +137,15 @@
                 </span>
             </p>
         {% endfor %}
-        <button class="book_card__button button">Выбрать</button>
+        <form action="{{ url_for('index') }}" method="get">
+            <input class="book_card__button button" type="submit" value="Взять"
+                    {% if book['Количество'] == 0 %}
+                   disabled
+                    {% endif %}
+            >
+            <label>
+                <input hidden type="text" name="book" value="{{ book.book_id }}">
+            </label>
+        </form>
     </div>
 {% endmacro %}

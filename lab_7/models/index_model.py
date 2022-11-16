@@ -44,10 +44,16 @@ INSERT INTO reader(reader_name) VALUES (:new_reader)
 # для обработки данных о взятой книге
 def borrow_book(conn, book_id, reader_id):
     cur = conn.cursor()
-    # добавить взятую книгу (book_id) читателю (reader_id) в таблицу book_reader
-    # указать текущую дату как дату выдачи книги
-    # уменьшить количество экземпляров взятой книги
-    return True
+
+    cur.executescript(f'''
+INSERT INTO book_reader(book_id, reader_id, borrow_date) VALUES ({book_id},{reader_id}, date('now'));
+
+UPDATE book
+SET available_numbers = available_numbers - 1
+WHERE book_id = {book_id}
+    ''')
+
+    return conn.commit()
 
 
 # Увеличить количество экземпляров книг в таблице book и указать текущую дату как дату сдачи книги в таблице book_reader

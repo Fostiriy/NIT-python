@@ -45,3 +45,16 @@
 .block {
     padding: 10px 20px;
 }
+
+.table {
+    margin-bottom: 1rem;
+}
+
+.table thead {
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding-right: 1rem;
+}
