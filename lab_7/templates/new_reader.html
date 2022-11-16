@@ -15,14 +15,14 @@
 <div class=block>
     <form action="{{ url_for('index') }}" method="get">
         <p>
-            <label for="name">
+            <label>
                 Имя читателя:
-                <input type="text" name="new_reader">
+                <input type="text" name="new_reader" required>
             </label>
         </p>
         <p>
             <input type="submit" value="Добавить читателя">
-            <input type="button" onclick="history.back()" value="Отменить">
+            <input type="button" onclick="window.location='{{ url_for('index') }}'" value="Отменить">
         </p>
     </form>
 </div>

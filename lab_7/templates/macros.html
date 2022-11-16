@@ -44,7 +44,7 @@
 
 <! — Формирование поля со списком -->
 {% macro render_combo_box(combo_box, reader_id, len) %}
-    <select name="reader">
+    <select name="reader" required>
         {% set n = len(combo_box) %}
         <!-- формируем строки списка (каждое значение поля
         reader_name - строка списка) в виде
@@ -64,4 +64,73 @@
         </option>
         {% endfor %}
     </select>
+{% endmacro %}
+
+{% macro render_selection_section(section, data, choices, len) %}
+    <details class="selection_section" open>
+        <summary class="selection_section__header">
+            {% if section == 'genres' %}
+                Жанр
+            {% elif section == 'authors' %}
+                Автор
+            {% elif section == 'publishers' %}
+                Издательство
+            {% endif %}
+        </summary>
+        <fieldset class="selection_section__body">
+            {% for i in range(len(data)) %}
+                <label class="option_label">
+                    <input type="checkbox" name="{{ section }}"
+                            {% set value = data.iloc[i, 0] %}
+                           value="{{ value }}"
+                            {% if value in choices %}
+                           checked
+                            {% endif %}
+                    >
+                    {{ value }} ({{ data.iloc[i, 1] }})
+                </label>
+            {% endfor %}
+        </fieldset>
+    </details>
+{% endmacro %}
+
+{% macro render_selection_tags(section, data, choices, len) %}
+    <span class="section_name">{% if section == 'genres' %}
+        Жанр:
+    {% elif section == 'authors' %}
+        Автор:
+    {% elif section == 'publishers' %}
+        Издательство:
+    {% endif %}
+    </span>
+    {% if choices != [] %}
+        {% for i in range(len(data)) %}
+            {% set value = data.iloc[i, 0] %}
+            {% if value in choices %}
+                <span class="section_choice">{{ value }}<span class="gap">, </span></span>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <span class="section_choice">
+        {% if section == 'publishers' %}
+            Любое<span class="gap">, </span>
+        {% else %}
+            Любой<span class="gap">, </span>
+        {% endif %}
+        </span>
+    {% endif %}
+{% endmacro %}
+
+{% macro render_book_card(book) %}
+    <div class="book_card">
+        {% set attributes = ['Название', 'Авторы', 'Жанр', 'Издательство', 'Год_издания', 'Количество'] %}
+        {% for attribute in attributes %}
+            <p class="book_info">{{ attribute }}:
+                <span class="book_info__value">
+                        {{ book[attribute] }}
+                </span>
+            </p>
+        {% endfor %}
+        <button class="book_card__button button">Выбрать</button>
+    </div>
 {% endmacro %}

@@ -19,20 +19,14 @@ def index():
         return_book(conn, book_reader_id)
 
     # нажата кнопка "Добавить" со страницы Новый читатель
-    # (взять в комментарии, пока не реализована страница Новый читатель)
     elif request.values.get('new_reader'):
         new_reader = request.values.get('new_reader')
         session['reader_id'] = get_new_reader(conn, new_reader)
 
     # нажата кнопка "Взять" со страницы Поиск
-    # (взять в комментарии, пока не реализована страница Поиск)
     elif request.values.get('book'):
         book_id = int(request.values.get('book'))
         borrow_book(conn, book_id, session['reader_id'])
-
-    # нажата кнопка "Не брать книгу" со страницы Поиск
-    elif request.values.get('noselect'):
-        a = 1
 
     # вошли первый раз
     else:

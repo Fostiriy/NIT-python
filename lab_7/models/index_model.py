@@ -36,6 +36,8 @@ def get_new_reader(conn, new_reader):
 INSERT INTO reader(reader_name) VALUES (:new_reader)
     ''', {"new_reader": new_reader})
 
+    conn.commit()
+
     return cur.lastrowid
 
 
