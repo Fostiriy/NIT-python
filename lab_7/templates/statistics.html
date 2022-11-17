@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/css/style.css"/>
     <title>Статистика</title>
+    {% import "macros.html" as macros %}
 </head>
 <body>
 <div class=menu>
@@ -12,6 +13,32 @@
         <li><a href={{ url_for('book') }}>Книги</a></li>
         <li class=active><a href={{ url_for('statistics') }}>Статистика</a></li>
     </ul>
+</div>
+<div class=block>
+    <form action="" method="post">
+        <p>
+            <label>
+                Запрос
+                <select name="query" required>
+                    <option selected value="reader_activity">Активность читателей</option>
+                    <option value="query_name">Запрос 2</option>
+                    <option value="query_name">Запрос 3</option>
+                </select>
+            </label>
+        </p>
+        <p>
+            Период
+            <label>
+                <input type="date" name="start_date" required>
+            </label>
+            <label>
+                <input type="date" name="finish_date" required>
+            </label>
+        </p>
+        <input type="submit" value="Найти">
+    </form>
+
+    {{ macros.render_query_table(table_name, df_query, id, len) }}
 </div>
 </body>
 </html>
